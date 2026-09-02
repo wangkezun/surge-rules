@@ -1,0 +1,18 @@
+# Optional privacy rules. This file is intentionally not subscribed by default.
+# Blocking these endpoints may disable diagnostics or optional product features.
+
+# Dropbox client event/crash reporting
+DOMAIN,d.dropbox.com
+
+# Brave privacy-preserving product telemetry
+DOMAIN,star-randsrv.bsg.brave.com
+
+# Brave Web Discovery Project; disabling the feature in Brave is preferred
+DOMAIN-SUFFIX,wdp.brave.com
+
+# Project-specific Sentry crash reporting observed from OpenAI clients
+DOMAIN,o33249.ingest.us.sentry.io
+
+# 1Password client log forwarding; keep optional until impact is verified
+DOMAIN,client-log-forwarder.1password.com
+

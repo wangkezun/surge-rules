@@ -1,0 +1,31 @@
+name: Validate rules
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Surge rule files
+        shell: bash
+        run: |
+          set -euo pipefail
+          validation_result=0
+          while IFS= read -r file; do
+            invalid=$(grep -Ev '^[[:space:]]*(#.*)?$|^(DOMAIN|DOMAIN-SUFFIX),[A-Za-z0-9._-]+$' "$file" || true)
+            if [[ -n "$invalid" ]]; then
+              echo "Invalid lines in $file:"
+              echo "$invalid"
+              validation_result=1
+            fi
+            duplicates=$(grep -Ev '^[[:space:]]*(#.*)?$' "$file" | sort | uniq -d)
+            if [[ -n "$duplicates" ]]; then
+              echo "Duplicate rules in $file:"
+              echo "$duplicates"
+              validation_result=1
+            fi
+          done < <(find services reject -name '*.list' -type f -print | sort)
+          exit "$validation_result"

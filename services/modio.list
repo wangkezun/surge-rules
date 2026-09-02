@@ -1,0 +1,5 @@
+# mod.io website, API and media/file CDN
+DOMAIN-SUFFIX,mod.io
+DOMAIN-SUFFIX,modapi.io
+DOMAIN-SUFFIX,modcdn.io
+

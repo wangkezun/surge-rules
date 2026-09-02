@@ -1,0 +1,19 @@
+# Confirmed advertising, tracking and non-essential telemetry observed locally.
+# No device names, IP addresses, paths, query parameters or request logs are stored here.
+
+# Bilibili Games advertising impressions and conversion callbacks
+DOMAIN,impression.biligame.com
+
+# DouYu advertising and application performance monitoring
+DOMAIN,rtbapi.douyucdn.cn
+DOMAIN,apm.douyucdn.cn
+
+# Third-party advertising
+DOMAIN,ad-api.morefreegame.com
+DOMAIN,ef-dongfeng.tanx.com
+
+# Vivo tracking and diagnostic uploads
+DOMAIN,vhs.wwstat.com
+DOMAIN,str-vcode-tracker-fenghuang-prd-bj.vivo.com.cn
+DOMAIN,err-up.vivo.com.cn
+
