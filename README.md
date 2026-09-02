@@ -6,8 +6,8 @@
 
 | 文件 | 用途 | 建议策略 |
 | --- | --- | --- |
-| `services/modio.list` | mod.io API 与 CDN | `🚀Proxy` |
-| `services/nexusmods.list` | Nexus Mods | `🚀Proxy` |
+| `services/modio.list` | mod.io API 与 CDN | `🎮Steam` |
+| `services/nexusmods.list` | Nexus Mods | `🎮Steam` |
 | `reject/confirmed.list` | 已从实际请求确认的广告、追踪和遥测 | `REJECT` |
 | `reject/optional-telemetry.list` | 可能影响可选功能的遥测，不默认启用 | `REJECT` |
 
@@ -15,8 +15,8 @@
 
 ```ini
 RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/reject/confirmed.list,REJECT,extended-matching
-RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/services/modio.list,🚀Proxy
-RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/services/nexusmods.list,🚀Proxy
+RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/services/modio.list,🎮Steam
+RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/services/nexusmods.list,🎮Steam
 ```
 
 拦截规则应放在各类服务规则、国内直连、China IP 和 `FINAL` 之前。服务分流规则应放在通用 CDN、下载、国内/全球兜底和 `FINAL` 之前。
@@ -28,4 +28,3 @@ RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/services/n
 - 纯广告、追踪与非必要遥测进入 `confirmed.list`。
 - 可能影响同步、诊断、奖励或产品可选功能的项目进入 `optional-telemetry.list`，不自动订阅。
 - 优先使用精确 `DOMAIN`，只有确认整个注册域用途一致时才使用 `DOMAIN-SUFFIX`。
-
