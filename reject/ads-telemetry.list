@@ -17,3 +17,5 @@ DOMAIN,vhs.wwstat.com
 DOMAIN,str-vcode-tracker-fenghuang-prd-bj.vivo.com.cn
 DOMAIN,err-up.vivo.com.cn
 
+# GOG Galaxy diagnostic and usage logging
+DOMAIN,galaxy-log.gog.com

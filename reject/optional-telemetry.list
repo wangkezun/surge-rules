@@ -16,3 +16,9 @@ DOMAIN,o33249.ingest.us.sentry.io
 # 1Password client log forwarding; keep optional until impact is verified
 DOMAIN,client-log-forwarder.1password.com
 
+# Web Scraper extension usage statistics
+DOMAIN,stats.webscraper.io
+
+# Logitech G Hub analytics and device recommendations
+DOMAIN,datapipeline.logitech.io
+DOMAIN,device-recommendation.logitech.com
