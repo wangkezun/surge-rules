@@ -1,6 +1,0 @@
-# High-frequency telemetry that should be silently dropped.
-# Subscribe with REJECT-DROP and extended-matching before generic reject lists.
-
-# Bilibili data-flow telemetry. The app may reach it through HTTPDNS IPs,
-# so extended matching is required to inspect the recovered hostname/SNI.
-DOMAIN,dataflow.biliapi.com
