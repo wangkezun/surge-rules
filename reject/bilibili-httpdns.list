@@ -1,0 +1,6 @@
+# Bilibili telemetry endpoints observed causing immediate-reject retry loops.
+# Subscribe with REJECT-DROP and extended-matching so HTTPDNS URL queries are
+# covered without storing rotating resolver IP addresses or full request URLs.
+
+DOMAIN,dataflow.biliapi.com
+DOMAIN,cm.bilibili.com
