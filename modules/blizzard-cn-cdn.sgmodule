@@ -1,0 +1,13 @@
+#!name=暴雪国服 CDN
+#!desc=将已确认有国内镜像的《魔兽世界》下载请求改写到网易雷火 CDN；不影响其他暴雪游戏。
+#!requirement=SYSTEM = 'macOS'
+
+[General]
+force-http-engine-hosts = %APPEND% level3.blizzard.com:80, dist.blizzard.com:80, *.cdn.blizzard.com:80, blizzard.gcdn.cloudn.co.kr:80
+
+[Rule]
+DOMAIN,blzdist-wow.necdn.leihuo.netease.com,DIRECT
+DOMAIN,codupdate.qiyou.cn,DIRECT
+
+[URL Rewrite]
+^http://(?:level3\.blizzard\.com|dist\.blizzard\.com|(?:[^./]+\.)?cdn\.blizzard\.com|blizzard\.gcdn\.cloudn\.co\.kr)/tpr/wow/ http://blzdist-wow.necdn.leihuo.netease.com/tpr/wow/ header

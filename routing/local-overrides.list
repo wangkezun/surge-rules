@@ -1,0 +1,15 @@
+# Local routing overrides derived from this network's observed traffic.
+# Keep this RULE-SET before service-specific, CDN, and download rules.
+
+# Mainland download/CDN endpoints
+DOMAIN,cn.download.nvidia.com
+DOMAIN-SUFFIX,dl.eccdnx.com
+
+# Apple infrastructure that should use the local network path
+DOMAIN,captive.apple.com
+DOMAIN-SUFFIX,lcdn-locator.apple.com
+DOMAIN-SUFFIX,push.apple.com
+DOMAIN-SUFFIX,ls.apple.com
+
+# Google service endpoint with a mainland DNS answer
+DOMAIN,services.googleapis.cn

@@ -15,7 +15,7 @@ jobs:
           set -euo pipefail
           validation_result=0
           while IFS= read -r file; do
-            invalid=$(grep -Ev '^[[:space:]]*(#.*)?$|^(DOMAIN|DOMAIN-SUFFIX),[A-Za-z0-9._-]+$' "$file" || true)
+            invalid=$(grep -Ev '^[[:space:]]*(#.*)?$|^(DOMAIN|DOMAIN-SUFFIX),[A-Za-z0-9._-]+$|^\.[A-Za-z0-9._-]+$' "$file" || true)
             if [[ -n "$invalid" ]]; then
               echo "Invalid lines in $file:"
               echo "$invalid"
@@ -27,5 +27,5 @@ jobs:
               echo "$duplicates"
               validation_result=1
             fi
-          done < <(find services reject -name '*.list' -type f -print | sort)
+          done < <(find ai reject routing services -name '*.list' -type f -print | sort)
           exit "$validation_result"

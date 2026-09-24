@@ -1,0 +1,3 @@
+# Hugging Face - large file downloads (LFS CDN + Xet storage)
+# covers cdn-lfs[-us-1|-eu-1].hf.co and *.xethub.hf.co (transfer/cas-server/cas-bridge)
+DOMAIN-SUFFIX,hf.co
