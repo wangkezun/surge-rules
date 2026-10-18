@@ -19,3 +19,6 @@ DOMAIN,err-up.vivo.com.cn
 
 # GOG Galaxy diagnostic and usage logging
 DOMAIN,galaxy-log.gog.com
+
+# YY/DUOWAN usage logging, A/B testing and advertising telemetry
+DOMAIN,mlog.bigda.com
