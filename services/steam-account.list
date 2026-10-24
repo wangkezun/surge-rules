@@ -1,0 +1,7 @@
+# Steam account, API and connection-manager traffic.
+# Keep this ruleset before SteamCN.list so account sessions do not alternate
+# between a mainland DIRECT address and the selected Steam region policy.
+
+DOMAIN,api.steampowered.com
+DOMAIN-SUFFIX,cm.steampowered.com
+DOMAIN-SUFFIX,steamserver.net
