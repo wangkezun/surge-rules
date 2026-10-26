@@ -1,7 +1,8 @@
-# Steam account, API and connection-manager traffic.
-# Keep this ruleset before SteamCN.list so account sessions do not alternate
-# between a mainland DIRECT address and the selected Steam region policy.
+# Steam account, login, API and connection-manager traffic.
+# Subscribe with DIRECT before SteamCN.list so every device using the shared
+# profile presents a mainland network path for Steam account sessions.
 
 DOMAIN,api.steampowered.com
+DOMAIN,login.steampowered.com
 DOMAIN-SUFFIX,cm.steampowered.com
 DOMAIN-SUFFIX,steamserver.net

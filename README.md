@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | `services/modio.list` | mod.io API 与 CDN | `🎮Steam` |
 | `services/nexusmods.list` | Nexus Mods 与文件 CDN | `🎮Steam` |
-| `services/steam-account.list` | Steam 账户、API 与连接管理；应放在 `SteamCN.list` 之前 | `🎮Steam` |
+| `services/steam-account.list` | Steam 登录、账户、API 与连接管理；应放在 `SteamCN.list` 之前 | `DIRECT` |
 | `ai/huggingface.list` | Hugging Face 主站与 API | `🤖AI` |
 | `ai/huggingface-cdn.list` | Hugging Face 大文件与 Xet 存储 | `⬇️下载` |
 | `routing/local-overrides.list` | 本地网络确认过的直连覆盖 | `DIRECT` |
@@ -30,7 +30,7 @@
 RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/reject/bilibili-httpdns.list,REJECT-DROP,extended-matching
 RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/reject/ads-telemetry.list,REJECT,extended-matching
 RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/routing/local-overrides.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/services/steam-account.list,🎮Steam
+RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/services/steam-account.list,DIRECT
 RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/ai/huggingface.list,🤖AI
 RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/ai/huggingface-cdn.list,⬇️下载
 DOMAIN-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/routing/geo-hk.list,🇭🇰香港
@@ -39,7 +39,7 @@ RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/services/m
 RULE-SET,https://raw.githubusercontent.com/wangkezun/surge-rules/main/services/nexusmods.list,🎮Steam
 ```
 
-拦截规则应放在各类服务规则、国内直连、China IP 和 `FINAL` 之前。服务分流规则应放在通用 CDN、下载、国内/全球兜底和 `FINAL` 之前。`steam-account.list` 还必须放在第三方 `SteamCN.list` 之前，避免连接管理域名被提前直连。
+拦截规则应放在各类服务规则、国内直连、China IP 和 `FINAL` 之前。服务分流规则应放在通用 CDN、下载、国内/全球兜底和 `FINAL` 之前。`steam-account.list` 还必须以 `DIRECT` 放在第三方 `SteamCN.list` 之前，使共享配置下各设备的 Steam 登录和连接管理保持国内出口一致。
 
 ## 维护原则
 
